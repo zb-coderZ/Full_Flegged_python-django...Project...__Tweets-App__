@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block title %}Contact - TweetApp{% endblock %}
+
+{% block content %}
+
+<!-- HEADER -->
+<div class="text-center mt-16">
+
+    <h1 class="text-4xl md:text-5xl font-bold text-white">
+        Contact <span class="text-blue-600">Us</span>
+    </h1>
+
+    <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+        Have a question, feedback, or issue? Send us a message and we’ll get back to you as soon as possible.
+    </p>
+
+</div>
+
+<!-- CONTACT SECTION -->
+<div class="mt-12 grid md:grid-cols-2 gap-10">
+
+    <!-- CONTACT FORM -->
+    <div class="bg-slate-800 border border-slate-700 p-6 rounded-xl">
+
+        <h2 class="text-xl font-semibold text-white mb-4">Send a Message</h2>
+
+        <form class="space-y-4">
+
+            <input type="text" placeholder="Your Name"
+                   class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-600">
+
+            <input type="email" placeholder="Your Email"
+                   class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-600">
+
+            <textarea rows="5" placeholder="Your Message"
+                      class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-600"></textarea>
+
+            <button type="submit"
+                    class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- CONTACT INFO -->
+    <div class="bg-slate-800 border border-slate-700 p-6 rounded-xl">
+
+        <h2 class="text-xl font-semibold text-white mb-4">Contact Information</h2>
+
+        <div class="space-y-4 text-slate-300">
+
+            <p>
+                📍 <span class="text-slate-400">Location:</span> Pakistan
+            </p>
+
+            <p>
+                📧 <span class="text-slate-400">Email:</span> zohaibzulfiqar9998@gmail.com
+            </p>
+
+            <p>
+                📞 <span class="text-slate-400">Phone:</span> +92 317 0674509
+            </p>
+
+            <p>
+                ⏰ <span class="text-slate-400">Response Time:</span> 24–48 hours
+            </p>
+
+        </div>
+
+        <!-- SOCIAL -->
+        <div class="mt-6">
+            <h3 class="text-white font-semibold mb-3">Follow Us</h3>
+
+            <div class="flex space-x-3">
+                <a href="https://x.com/zbanalyzt" 
+                target="_blank"
+                class="px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg hover:bg-slate-700 text-sm">Twitter</a>
+                <a href="https://github.com/zb-coderZ" 
+                target="_blank"
+                class="px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg hover:bg-slate-700 text-sm">GitHub</a>
+                <a href="https://www.linkedin.com/in/zohaib-zulfiqar-developer/"
+                target="_blank"
+                class="px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg hover:bg-slate-700 text-sm">LinkedIn</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- CTA -->
+<div class="text-center mt-20">
+
+    <h3 class="text-xl text-white font-semibold">
+        We usually reply within 24 hours 🚀
+    </h3>
+
+</div>
+
+{% endblock %}

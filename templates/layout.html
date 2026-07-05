@@ -1,0 +1,116 @@
+{% load static tailwind_tags %}
+{% load django_browser_reload %}
+{% django_browser_reload_script %}
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <title>
+        {% block title %}
+        CRUD based project
+        {% endblock %}
+    </title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {% tailwind_css %}
+
+    <style>
+        body {
+            background-color: #0F172A;
+        }
+    </style>
+</head>
+
+<body class="text-slate-100 font-sans">
+
+<!-- NAVBAR -->
+<nav class="bg-slate-900 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+
+        <!-- Logo -->
+        <a href="#" class="text-xl font-bold text-white tracking-wide">
+            Tweet<span class="text-blue-600">App</span>
+        </a>
+
+        <!-- Links -->
+        <div class="hidden md:flex space-x-6 text-slate-300">
+            <a href="{% url 'home_view' %}" class="hover:text-white transition">Home</a>
+            <a href="{% url 'about_view' %}" class="hover:text-white transition">About</a>
+            <a href="{% url 'contact_view' %}" class="hover:text-white transition">Contact</a>
+            <a href="{% url 'privacy_view' %}" class="hover:text-white transition">Privacy</a>
+            <a href="/tweets" class="hover:text-white transition">Tweets</a>
+        </div>
+
+        <!-- Auth Buttons -->
+        {% comment %} <div class="space-x-3">
+            <a href="#" class="px-4 py-2 text-sm rounded-lg border border-slate-700 text-slate-200 hover:bg-slate-800 transition">
+                Login
+            </a>
+            <a href="#" class="px-4 py-2 text-sm rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition">
+                Sign Up
+            </a>
+        </div> {% endcomment %}
+
+    </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="max-w-6xl mx-auto px-4 py-8">
+
+    {% block content %}
+
+    <div class="text-center mt-20">
+        <h1 class="text-4xl font-bold text-white">
+            Welcome to TweetApp
+        </h1>
+        <p class="text-slate-400 mt-3">
+            A simple CRUD-based Twitter style project built with Django + Tailwind
+        </p>
+
+        <div class="mt-6">
+            <a href="#"
+               class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-medium transition">
+                Get Started
+            </a>
+        </div>
+    </div>
+
+    {% endblock %}
+
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-slate-800 mt-16 bg-slate-900">
+
+    <div class="max-w-6xl mx-auto px-4 py-10">
+
+        <!-- NAV LINKS SECTION -->
+        <div class="flex flex-wrap justify-center gap-6 text-slate-400 text-sm mb-6">
+
+            <a href="{% url 'home_view' %}" class="hover:text-white transition">Home</a>
+
+            <a href="{% url 'about_view' %}" class="hover:text-white transition">About</a>
+
+            <a href="{% url 'contact_view' %}" class="hover:text-white transition">Contact</a>
+
+            <a href="{% url 'privacy_view' %}" class="hover:text-white transition">Privacy</a>
+
+        </div>
+
+        <!-- DIVIDER -->
+        <div class="border-t border-slate-800 my-6"></div>
+
+        <!-- COPYRIGHT -->
+        <div class="text-center text-slate-500 text-sm">
+            © 2026 TweetApp. Built with Zohaib ❤️ Choudhary.
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

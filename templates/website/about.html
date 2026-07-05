@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block title %}About - TweetApp{% endblock %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<div class="text-center mt-16">
+
+    <h1 class="text-4xl md:text-5xl font-bold text-white">
+        About <span class="text-blue-600">TweetApp</span>
+    </h1>
+
+    <p class="text-slate-400 mt-4 text-lg max-w-2xl mx-auto">
+        TweetApp is a Django-based CRUD project inspired by Twitter/X.
+        It helps users create, edit, delete, and manage posts with authentication and secure routing.
+    </p>
+
+</div>
+
+<!-- MISSION SECTION -->
+<div class="mt-16 grid md:grid-cols-2 gap-8 items-center">
+
+    <div class="bg-slate-800 border border-slate-700 p-6 rounded-xl">
+        <h2 class="text-2xl font-bold text-white">Our Mission</h2>
+        <p class="text-slate-400 mt-3 leading-relaxed">
+            To build a clean and simple social posting system using Django where users can
+            learn real-world backend development including authentication, ORM, and CRUD operations.
+        </p>
+    </div>
+
+    <div class="bg-slate-800 border border-slate-700 p-6 rounded-xl">
+        <h2 class="text-2xl font-bold text-white">What You Learn Here</h2>
+        <ul class="text-slate-400 mt-3 space-y-2">
+            <li>✔ Django Models & ORM</li>
+            <li>✔ CRUD Operations (Create, Read, Update, Delete)</li>
+            <li>✔ User Authentication System</li>
+            <li>✔ Route Protection (Login Required)</li>
+            <li>✔ Template Inheritance</li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- TECH STACK -->
+<div class="mt-16 text-center">
+
+    <h2 class="text-2xl font-bold text-white">Tech Stack</h2>
+
+    <div class="flex flex-wrap justify-center gap-3 mt-6">
+
+        <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-300">
+            Django
+        </span>
+
+        <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-300">
+            Python
+        </span>
+
+        <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-300">
+            Tailwind CSS
+        </span>
+
+        <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-300">
+            SQLite
+        </span>
+
+    </div>
+
+</div>
+
+<!-- CTA -->
+<div class="text-center mt-20">
+
+    <h3 class="text-xl text-white font-semibold">
+        Ready to explore the project?
+    </h3>
+
+    <a href="/"
+       class="inline-block mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition">
+        Go to Home Feed
+    </a>
+
+</div>
+
+{% endblock %}

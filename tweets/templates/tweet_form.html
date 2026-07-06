@@ -5,18 +5,57 @@ Tweet Form Page
 {% endblock %}
 
 {% block content %}
-<h2>
-    {% if form.instance.pk %} 
-    Edit Tweet
-    {% else %}
-    Create Tweet
-    {% endif %}
-</h2>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit" class="bg-green-500 p-2" >Submit</button>
-    <a href="{% url 'tweet_list' %}">Back to Tweet List</a>
-</form>
+
+<!-- HEADER -->
+<div class="text-center mt-10">
+
+    <h2 class="text-3xl font-bold text-white">
+        {% if form.instance.pk %}
+            Edit Tweet
+        {% else %}
+            Create Tweet
+        {% endif %}
+    </h2>
+
+    <p class="text-slate-400 mt-2">
+        Share your thoughts with the world 🚀
+    </p>
+
+</div>
+
+<!-- FORM CARD -->
+<div class="max-w-2xl mx-auto mt-10 bg-slate-800 border border-slate-700 p-6 rounded-xl">
+
+    <form method="post" enctype="multipart/form-data" class="space-y-5">
+
+        {% csrf_token %}
+
+        <!-- Django form fields -->
+        <div class="text-slate-200">
+            {{ form.as_p }}
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="flex items-center justify-between pt-4">
+
+            <button type="submit"
+                    class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition">
+                {% if form.instance.pk %}
+                    Update Tweet
+                {% else %}
+                    Create Tweet
+                {% endif %}
+            </button>
+
+            <a href="{% url 'tweet_list' %}"
+               class="text-slate-400 hover:text-white transition">
+                ← Back to Tweets
+            </a>
+
+        </div>
+
+    </form>
+
+</div>
 
 {% endblock %}

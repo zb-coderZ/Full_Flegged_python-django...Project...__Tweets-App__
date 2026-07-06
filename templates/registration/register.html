@@ -1,11 +1,48 @@
 {% extends "layout.html" %}
 
+{% block title %}Register - TweetApp{% endblock %}
+
 {% block content %}
-<h2>Regiter Form</h2>
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit" class="bg-red-500 p-2">register</button>
-</form>
+
+<!-- CENTER WRAPPER -->
+<div class="flex items-center justify-center mt-16">
+
+    <!-- CARD -->
+    <div class="w-full max-w-md bg-slate-800 border border-slate-700 rounded-xl p-8">
+
+        <!-- TITLE -->
+        <h2 class="text-2xl font-bold text-white text-center">
+            Create Your Account
+        </h2>
+
+        <p class="text-slate-400 text-center mt-2 text-sm">
+            Join TweetApp and start posting your tweets
+        </p>
+
+        <!-- FORM -->
+        <form method="post" class="mt-6 space-y-4">
+            {% csrf_token %}
+
+            <div class="text-slate-300">
+                {{ form.as_p }}
+            </div>
+
+            <!-- BUTTON -->
+            <button type="submit"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition">
+                Register
+            </button>
+
+        </form>
+
+        <!-- LOGIN LINK -->
+        <p class="text-center text-slate-400 text-sm mt-4">
+            Already have an account?
+            <a href="{% url 'login' %}" class="text-blue-500 hover:underline">Login</a>
+        </p>
+
+    </div>
+
+</div>
 
 {% endblock %}

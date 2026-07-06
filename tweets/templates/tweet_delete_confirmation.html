@@ -1,15 +1,44 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Tweet Deletion Page
+
+Delete Tweet
+
 {% endblock %}
 
 {% block content %}
-<p>Welocome to Tweet Confirmation Delete page</p>
 
-<form method="post">
-    {% csrf_token %}
-   <button class="bg-red-500">Delete</button>
-    <a href="{% url 'tweet_list' %}">Cancel</a>
-</form>
+<!-- WARNING CARD -->
+<div class="max-w-xl mx-auto mt-20 bg-slate-800 border border-red-500/30 rounded-xl p-6 text-center">
+
+    <h1 class="text-2xl font-bold text-white">
+        Delete Tweet
+    </h1>
+
+    <p class="text-slate-400 mt-3">
+        Are you sure you want to delete this tweet? This action cannot be undone.
+    </p>
+
+    <!-- OPTIONAL: show tweet preview if available -->
+    <div class="mt-6 bg-slate-900 border border-slate-700 p-4 rounded-lg text-slate-300 text-sm">
+        This tweet will be permanently removed from your feed.
+    </div>
+
+    <!-- FORM -->
+    <form method="post" class="mt-6 flex justify-center space-x-4">
+        {% csrf_token %}
+
+        <button type="submit"
+                class="px-5 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition">
+            Yes, Delete
+        </button>
+
+        <a href="{% url 'tweet_list' %}"
+           class="px-5 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition">
+            Cancel
+        </a>
+    </form>
+
+</div>
+
 {% endblock %}

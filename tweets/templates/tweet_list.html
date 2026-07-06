@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Tweet List Page
+{% endblock %}
+
+{% block content %}
+<a href="{% url 'tweet_create' %}" class="bg-red-500 rounded-lg p-2">Create Tweet123</a>
+{% for tweet in tweets %}
+<div>
+    
+    <h1>{{tweet.user.username}}</h1>
+    <p>{{tweet.text}}</p>
+    {% if tweet.photo %}
+    <img src="{{ tweet.photo.url }}" alt="Tweet Image">
+    {% endif %}
+    
+    <div class="flex gap-2">
+        
+        {% if tweet.user == user %}
+        <a href="{% url 'tweet_edit' tweet.id %}" class="bg-amber-500 p-2"> EDIT</a>
+
+        <a href="{% url 'tweet_delete' tweet.id %}" class="bg-red-500 p-2"> DELETE</a>
+        {% endif %}
+            
+        
+
+    </div>
+</div>
+{% endfor %} 
+
+<p>No tweets available</p>
+{% endblock %}

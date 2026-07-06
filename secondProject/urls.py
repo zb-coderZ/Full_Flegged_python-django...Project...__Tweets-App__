@@ -19,6 +19,7 @@ from django.urls import path,include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth.urls import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +28,7 @@ urlpatterns = [
     path('about/',views.about_view,name="about_view"),
     path('contact/',views.contact_view,name="contact_view"),
     path('privacy/',views.privacy_view,name="privacy_view"),
+    path('accounts/',include('django.contrib.auth.urls')),
 
 
 

@@ -41,18 +41,31 @@
             <a href="{% url 'about_view' %}" class="hover:text-white transition">About</a>
             <a href="{% url 'contact_view' %}" class="hover:text-white transition">Contact</a>
             <a href="{% url 'privacy_view' %}" class="hover:text-white transition">Privacy</a>
-            <a href="/tweets" class="hover:text-white transition">Tweets</a>
+            <a href="{% url 'tweet_list' %}" class="hover:text-white transition">Tweets Home</a>
         </div>
 
         <!-- Auth Buttons -->
-        {% comment %} <div class="space-x-3">
-            <a href="#" class="px-4 py-2 text-sm rounded-lg border border-slate-700 text-slate-200 hover:bg-slate-800 transition">
+         <div class="space-x-3">
+            
+            {% if user.is_authenticated %}
+            <form method='post' action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="px-4 py-2 text-sm rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition">
+                    logout
+                </button>
+            </form>
+            {% else %}
+            <a href="{% url 'login' %}" class="px-4 py-2 text-sm rounded-lg border border-slate-700 text-slate-200 hover:bg-slate-800 transition">
                 Login
             </a>
-            <a href="#" class="px-4 py-2 text-sm rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition">
+            <a href="{% url 'register' %}" class="px-4 py-2 text-sm rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition">
                 Sign Up
             </a>
-        </div> {% endcomment %}
+                
+            {% endif %}
+                
+           
+        </div> 
 
     </div>
 </nav>
